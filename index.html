@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+        <title>Practica Front-End</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Tomorrow:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="sombreado">
+                <div class="titulo">
+                    <h1>Cheat Sheet Css</h1>
+                    <p>De Guillermo Gonzalo Abuin para HackSpace</p>
+                </div>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Bases de Css</a>
+                    <ul class="submenu">
+                        <li><a href="#ancla_1">Selectores Css</a></li>
+                        <li><a href="#ancla_2">Box Model</a></li>
+                    </ul> 
+                </li>    
+                <li><a href="Flexbox.html">Flexbox</a>
+                    <ul class="submenu">
+                        <li><a href="Flexbox.html#ancla_flexbox1">Control de ejes</a></li>
+                        <li><a href="Flexbox.html#ancla_fbx_2">Justify-content</a></li>
+                        <li><a href="Flexbox.html#ancla_fbx_3">Align-Items</a></li>
+                        <li><a href="Flexbox.html#ancla_fbx_4">Align-Content</a></li>
+                    </ul>
+                </li>     
+                <li><a href="PracticaFlexbox.html">Practica Flexbox</a></li>     
+                <li><a href="Grid.html">Grid Layout</a>
+                    <ul class="submenu">
+                        <li><a href="Grid.html#ancla_grid_1">Fr y Auto</a></li>
+                        <li><a href="Grid.html#ancla_grid_2">Funcion repeat();</a></li>
+                        <li><a href="Grid.html#ancla_grid_3">Patrones repeat();</a></li>
+                        <li><a href="Grid.html#ancla_grid_4">Implicit y Explicit Grid</a></li>
+                        <li><a href="Grid.html#ancla_grid_5">Funciones grid-auto columns y grid-auto-rows</a></li>
+                    </ul>
+                </li>     
+            </ul>
+        </nav>
+        <main>
+            <section>
+                <h2 id="ancla_1">¿Que son los selectores en Css3?</h2>
+                <p>Un selector hace referencia al elemento que se aplica al estilo</p>
+                <h3>Hay 4 grades grupos de selectores</h3>
+                <ul>
+                    <li>Selectores basicos</li>
+                    <li>Selectores combinadores</li>
+                    <li>Selectores de pseudo-elementos</li>
+                    <li>Selectores de pseudo-clases</li>
+                </ul>
+                <p>los selectores de etiquetas  se aplican a todas esas etiquetas
+                    y no resultan muy buenos si lo que buscamos es que la regla no<br>
+                     se aplique a todos los ambitos.<br>
+                      estos selectores se usan para dar estilos generales. 
+                </p>    
+                <h3>Ejemplo de selector de etiqueta:</h3>
+                    <p>p{
+                        color:blue:
+                    }
+                </p>
+                <h3>Selectores de clase</h3>
+                <p>primero es necesario darle un atributo de tipo class en las etiquetas
+                    a las cuales queremos asociarlas a una clase por ejemplo, si tenemos 
+                    una etiqueta tipo h1 podemos poner "h1 class = titulo"                   
+                </p>
+                <h3>Ejemplo de selector de clase</h3>
+                <p> .titulo{
+                        color:red;
+                    }
+                </p>
+                <h3>Selectores de Id</h3>
+                <p>estos selectores no son recomendados para dar estilos 
+                    y solo deberian usar a un solo elemento dentro de todo el documento "html"
+                    los id se usan en "html" para anclas y en js para el dom, lo recomendable
+                    es nunca usarlos  
+                </p>
+                <h3>Ejemplo de selector ID</h3>
+                <P>#texto{
+                        background: red
+                    }
+                </P>
+                <h3>Selectores universales</h3>
+                <p>
+                    estos selectores se recomiendan solo usarse para cuando reseteamos el navegador
+                    este selector universal se aplica a todo el documento html
+                </p>
+                <h3>Selectores universales ejemplo</h3>
+                <p>
+                    *{
+                        color: red;
+
+                    }
+                </p>
+                <h3>Selectores de atributo</h3>
+                <p>
+                    lo que hacen es seleccionar por medio del atributo
+                    los atributos deben ponerse dentro de corchetes []
+                </p>
+                <h3>Ejemplo de selectores de atributo</h3>
+                <p>
+                    [href]{
+                        color: green;
+                    }
+                    en este caso todas kas etiquetas que contienen
+                    el atributo href son afectados por esta regla css
+                </p>               
+            </section>
+
+            <section>
+                <h2 id="ancla_2">Box Model</h2>
+                <p>
+                    En la web todo son cajas, al conjunto de esas cajas y la forma en la que el navegador
+                    los dibuja se denomina LAYOUT.
+
+                    Las propiedades principales de cada una de estas cajas son el ancho(width) y el alto (height)
+
+                    Existen dos tipos de elementos en HTML, elementos INLINE(EN LINEA) y elementos INBLOCK(EN BLOQUE)
+                </p>
+
+                <h3>Elementos Inline</h3>
+                <ul>
+                    <li>Son elementos que solo ocupan su contenido.</li>
+                    <li>No se pueden modificar ni su ancho ni su alto</li>
+                </ul>
+                <h3>Elementos Inblock</h3>
+                <ul>
+                    <li>Ocupan todo el ancho disponible</li>
+                    <li>Se les puede asignar ancho y alto</li>
+                </ul>
+                <h3>Ejemplos de Box Model</h3>
+                <a href="#">Enlace 1</a>
+                <a href="#">Enlace 2</a>
+
+                <div class="box-1">Contenido 1</div>
+                <div class="box-2">Contenido 2</div>
+                <p>los divs son elementos de bloque por tanto tienen propiedades
+                    width y height
+                </p>
+                <h3>El Margin</h3>
+                <p>Margin es la separacion entre una caja y las cajas adyacentes.</p>
+                <ul>
+                    <ul>Margin-top</ul>
+                    <ul>Margin-right</ul>
+                    <ul>Margin-boottom</ul>
+                    <ul>Margin-left</ul>
+                </ul>
+                <h3>Ejemplos:</h3>
+                <p>Margin: 1em-->equivale a 1em(arriba,derecha,abajo y a la izquierda)
+                    Margin:1em,2em(es arriba y  derecha e izquierda)
+                    Margin: 1em, 2em, 3em; (es arriba 1,derecha 2, abajo 3)
+                    Margin: 1em,2em,3,em,4em(arriba 1, derecha 2, abajo 3, izquierda 4em)
+                </p>
+                <div class="mrgn">
+                    <p>
+                        <h3>Margin</h3>
+                        top deja un margen hacia abajo desde la parte superior<br>
+                        right deja un margen desde desde el lado derecho<br>
+                        left deja un margen desde el lado izquiero<br>
+                        bottom deja un margen desde el fondo de la pagina 
+                        hacia arriba
+                    </p>
+                </div>
+
+                <div class="brdr">
+                    <p>
+                        <h3>Border</h3>
+                        El border son las lineas de contorno que delimitan el interior
+                        de la caja con respecto al exterior
+                    </p>
+                </div>
+
+                <div class="padd">
+                    <h3>Pading</h3>
+                    <p>El area de padding es el espacio entre el contenido del elemento
+                        y su borde. no se permiten valores negativos
+                    </p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+        <title>Ejercicio Practico Formulacio HTML y CSS3</title>
+        <link rel="stylesheet" href="styles3.css">
+    </head>
+    <header>
+        <div class="sombreado">
+            <div class="titulo">
+                <h1>Cheat Sheet Css</h1>
+                <p>De Guillermo Gonzalo Abuin para HackSpace</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Bases de Css</a>
+                <ul class="submenu">
+                    <li><a href="#ancla_1">Selectores Css</a></li>
+                    <li><a href="#ancla_2">Box Model</a></li>
+                </ul> 
+            </li>    
+            <li><a href="Flexbox.html">Flexbox</a>
+                <ul class="submenu">
+                    <li><a href="Flexbox.html#ancla_flexbox1">Control de ejes</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_2">Justify-content</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_3">Align-Items</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_4">Align-Content</a></li>
+                </ul>
+            </li>     
+            <li><a href="PracticaFlexbox.html">Practica Flexbox</a></li>     
+            <li><a href="Grid.html">Grid Layout</a>
+                <ul class="submenu">
+                    <li><a href="Grid.html#ancla_grid_1">Fr y Auto</a></li>
+                    <li><a href="Grid.html#ancla_grid_2">Funcion repeat();</a></li>
+                    <li><a href="Grid.html#ancla_grid_3">Patrones repeat();</a></li>
+                    <li><a href="Grid.html#ancla_grid_4">Implicit y Explicit Grid</a></li>
+                    <li><a href="Grid.html#ancla_grid_5">Funciones grid-auto columns y grid-auto-rows</a></li>
+                </ul>
+            </li>     
+        </ul>
+    </nav>
+    <body>
+        <div class="card">
+            <div class="card_left">
+                <img src="img/logo.png">
+            </div>
+            <div class="card_right">
+                <h1 class="card_title">Contacto</h1>
+                <form action="#" class="form">
+                    <div class="form_names">
+                        <div class="form_field">
+                            <label for="nombre" class="form_label">nombre</label>
+                            <input type="text" id="name" class="form_input">
+                        </div>
+                        <div class="form_field">
+                            <label for="surname" class="form_label">Apellido</label>
+                            <input type="text" id="surname" class="form_input">
+                        </div>
+                    </div>    
+                    <div class="form_field">
+                        <label for="email" class="form_label">email</label>
+                        <input type="email" id="email" class="form_input">
+                    </div>
+                    <div class="form_field">
+                        <label for="message" class="form_label">Mensajes</label>
+                        <textarea id="message" class="form_textarea"></textarea>
+                    </div>
+                    <input type="submit" class="form_submit" value="Enviar">
+                </form>
+            </div>
+        </div>    
+
+    </body>
+    <footer>
+
+    </footer>
+</html>

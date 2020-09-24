@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="Es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+        <link rel="stylesheet" href="styles4.css">
+        <title>Grid layout</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Tomorrow:wght@500&display=swap" rel="stylesheet">
+    </head>
+
+    <header>
+        <div class="sombreado">
+            <div class="titulo">
+                <h1>Cheat Sheet Css</h1>
+                <p>De Guillermo Gonzalo Abuin para HackSpace</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/">Bases de Css</a>
+                <ul class="submenu">
+                    <li><a href="#ancla_1">Selectores Css</a></li>
+                    <li><a href="#ancla_2">Box Model</a></li>
+                </ul> 
+            </li>    
+            <li><a href="Flexbox.html">Flexbox</a>
+                <ul class="submenu">
+                    <li><a href="Flexbox.html#ancla_flexbox1">Control de ejes</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_2">Justify-content</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_3">Align-Items</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_4">Align-Content</a></li>
+                </ul>
+            </li>     
+            <li><a href="PracticaFlexbox.html">Practica Flexbox</a></li>     
+            <li><a href="Grid.html">Grid Layout</a>
+                <ul class="submenu">
+                    <li><a href="Grid.html#ancla_grid_1">Fr y Auto</a></li>
+                    <li><a href="Grid.html#ancla_grid_2">Funcion repeat();</a></li>
+                    <li><a href="Grid.html#ancla_grid_3">Patrones repeat();</a></li>
+                    <li><a href="Grid.html#ancla_grid_4">Implicit y Explicit Grid</a></li>
+                    <li><a href="Grid.html#ancla_grid_5">Funciones grid-auto columns y grid-auto-rows</a></li>
+                </ul>
+            </li>     
+        </ul>
+    </nav>
+
+    <body> 
+        <ul>
+            <li>Es un modelo de layout que permite construir grillas dinamicas</li>
+            <li>Al igual que con flexbox, tenemos display:grid y display:inline-grid</li>
+            <li>Se necesita un contenedor(grid-container) y al menos un hijo(grid-item)</li>
+            <li>Las celdas son, items el contenedor es el contexto al que pertenecen los items</li>
+            <li>grid column: Es cada columna de nuestra cuadricula</li>
+            <li>grid row: es cada fila de nuestra cuadricula.</li>
+            <li>grid cell: es cada celda de nuestra cuadricula</li>
+            <li>grid gap: es la separacion entre celdas</li>
+            <li>grid line: existen columns lines y row lines, son las lineas que delimitan
+                cada columna/fila respectivamente
+            </li>
+            <li>En grid cada celda es dínamica y el resto de la cuadrícula se adapta</li>
+            <li>Podemos decir donde empieza cada celda y donde acaba, tanto en columna como en fila.</li>
+        </ul>
+
+        <div class="grid_container">
+            <div class="grid_item">A</div>
+            <div class="grid_item">b</div>
+            <div class="grid_item">c</div>
+            <div class="grid_item">d</div>
+            <div class="grid_item">e</div>
+            <div class="grid_item">f</div>
+            <div class="grid_item">g</div>
+            <div class="grid_item">h</div>
+            <div class="grid_item">i</div>
+        </div>
+
+        <p>por defecto el sistema establece 1 como el numero de columnas.
+            para indicar la cantidad de columnas y medidas que queremos debemos usar:
+            grid-template-column y las medidas pueden ser en pixeles, viewportheight,
+            rem y em por ejemplo en este caso usamoos cuatro columnias de 100 pixeles
+            grid-template-columns: 100px 100px 100px 100px;
+        </p>
+
+        <div class="contenedor">
+            <div class="grid_item_filas">A</div>
+            <div class="grid_item_filas">b</div>
+            <div class="grid_item_filas">c</div>
+            <div class="grid_item_filas">d</div>
+            <div class="grid_item_filas">e</div>
+            <div class="grid_item_filas">f</div>
+            <div class="grid_item_filas">g</div>
+            <div class="grid_item_filas">h</div>
+            <div class="grid_item_filas">i</div>
+        </div>
+
+        <p>en esta grilla colocamos 3 columnas y 3 filas con las propiedades grid-template-columns
+            y grid-template-rows. en este caso la tercera columna tiene 180 pixeles la primera 
+            fila tiene un ancho de 80 pixeles y la fila del medio es de 200pixeles la tercera fila
+            tiene apenas 10 pixeles. (en este caso la fuente desbordan en la ultima fila por que la medida <br>
+            es mas chica) 
+        </p>
+
+        <div class="contenedor_2">
+            <div class="grid_item_gap">A</div>
+            <div class="grid_item_gap">b</div>
+            <div class="grid_item_gap">c</div>
+            <div class="grid_item_gap">d</div>
+            <div class="grid_item_gap">e</div>
+            <div class="grid_item_gap">f</div>
+            <div class="grid_item_gap">g</div>
+            <div class="grid_item_gap">h</div>
+            <div class="grid_item_gap">i</div>
+        </div>
+        <p>en este caso aplicamos una separacion entre columna y columna, fila y fila
+            de exactamente 100 pixeles por medio de la funcion grid-gap:100px;
+        </p>
+
+        <h2>Ejercicio construyendo un Grid Layout</h2>
+        <p>las propiedades grid-column-start y grid-column-end<br>
+            sirven para establecer en que column line
+            inicia el elemento y en que column line finaliza el elemento.<br>
+            Con grid-row-start y grid-row-end tenemos exactamente lo mismo y<br>
+            podemos saber en que grid row line inicia y en cual grid row end termina. 
+        </p>
+        <div class="contenedor_practica">
+            <div class="item_prac">A</div>
+            <div class="item_prac">B</div>
+            <div class="item_prac">C</div>
+            <div class="item_prac">D</div>
+            <div class="item_prac">E</div>
+            <div class="item_prac">F</div>
+            <div class="item_prac">G</div>
+            <div class="item_prac">H</div>
+            <div class="item_prac">I</div>
+        </div>
+
+
+        <h2 id="ancla_grid_1">Medidas Fr y Auto en Grid Layout</h2>
+        <p>fr: Equivale a N fracciones del espacio disponible despues de establecer
+            las medidas fijas.
+            auto:Equivale al espacio que quede despues de repartir todos los elementos, 
+            es el ultimo que se reparte. el tamaño minimo del item será el espacio
+            del contenido + mas el padding si existiera.
+        </p>
+
+        <h3>Ejemplo Grid con medidas Fr</h3>
+        <div class="contenedor_3">
+            <div class="grid_item_fr">A</div>
+            <div class="grid_item_fr">b</div>
+            <div class="grid_item_fr">c</div>
+            <div class="grid_item_fr">d</div>
+            <div class="grid_item_fr">e</div>
+            <div class="grid_item_fr">f</div>
+            <div class="grid_item_fr">g</div>
+            <div class="grid_item_fr">h</div>
+            <div class="grid_item_fr">i</div>
+        </div>
+
+        <h3>Ejemplo Grid con medidas Auto</h3>
+        <div class="contenedor_auto">
+            <div class="grid_item_auto">A</div>
+            <div class="grid_item_auto">b</div>
+            <div class="grid_item_auto">c</div>
+            <div class="grid_item_auto">d</div>
+            <div class="grid_item_auto">e</div>
+            <div class="grid_item_auto">f</div>
+            <div class="grid_item_auto">g</div>
+            <div class="grid_item_auto">h</div>
+            <div class="grid_item_auto">i</div>
+        </div>
+        <p>Esta grilla esta compuesta de 3 columnas y 3 filas, la segunda
+            columna contiene una medida de tipo auto y presenta este espacio porque
+            con auto el tamaño minimo que puede ocupar es equivalente al tamaño de su contenido
+        </p>
+
+
+        <h3>Ejemplo comparativo 2 de Grid con medidas  Auto</h3>
+        <div class="contenedor_auto_2">
+            <div class="grid_item_auto_2">A</div>
+            <div class="grid_item_auto_2">1</div>
+            <div class="grid_item_auto_2">c</div>
+            <div class="grid_item_auto_2">d</div>
+            <div class="grid_item_auto_2">22</div>
+            <div class="grid_item_auto_2">f</div>
+            <div class="grid_item_auto_2">g</div>
+            <div class="grid_item_auto_2">333</div>
+            <div class="grid_item_auto_2">4444</div>
+        </div>
+        <p>Tenemos una segunda grilla con 3 columnas y 3 filas.
+            la primera columna y la tercera tienen una medida de 100 pixeles
+            mientras que la segunda tiene una medida auto.
+            la primera celda de la primera columna tiene el numero 1 
+            la segunda celda de la primera columna tiene el numero 2 dos 
+            veces repetida.
+            la tecera celda de la segunda columna contiene el numero 3 ocupando
+            tres espacios y vemos como ya no cabe mas espacio y eso es porque
+            justamente con auto la medida de la columna se adapta exclusivamente
+            al espacio necesario para que quepa su contenido como los elementos
+            en las dos celdas anteriores ocupaban menos espacio que la tecera 
+            celda estos no fijan el espacio tamaño que auto debe otorgar a la columna
+            y para contrastar podemos ver que en la tercera celda de la tercera columna
+            tenemos 4 numeros 4 y este desborda al espacio de 1oo pixeles entonces 
+            tambien podemos ver asi la ventaja de auto sobre otro tipo de medidas. 
+        </p>
+
+        <h2 id="ancla_grid_2">La funcion Repeat</h2>
+        <p>Con la funcion repeat podemos establecer repeticiones de medidas o patrones.
+            funcionan poniendo dos valores separados con coma y  entre parentesis.
+        </p>
+
+        <h3>Grid construido con la funcion Repeat</h3>
+        <div class="contenedor_repeat">
+            <div class="grid_item_repeat">A</div>
+            <div class="grid_item_repeat">B</div>
+            <div class="grid_item_repeat">C</div>
+            <div class="grid_item_repeat">D</div>
+            <div class="grid_item_repeat">E</div>
+            <div class="grid_item_repeat">F</div>
+            <div class="grid_item_repeat">G</div>
+            <div class="grid_item_repeat">H</div>
+            <div class="grid_item_repeat">I</div>
+            <div class="grid_item_repeat">J</div>
+        </div>
+        <p>
+            para la estructura que tiene este grid, la firma de la funcion repeat es la siguiente:
+            grid-template-columns: repeat(5,100px). esto significa que queremos establecer 5 columnas
+            con un espacio de separacion de 100 pixeles entre celda y celda.  
+        </p>
+
+        <h3>Grid 2 construido con la funcion Repeat</h3>
+        <div class="contenedor_repeat_2">
+            <div class="grid_item_repeat_2">A</div>
+            <div class="grid_item_repeat_2">B</div>
+            <div class="grid_item_repeat_2">C</div>
+            <div class="grid_item_repeat_2">D</div>
+            <div class="grid_item_repeat_2">E</div>
+            <div class="grid_item_repeat_2">F</div>
+            <div class="grid_item_repeat_2">G</div>
+            <div class="grid_item_repeat_2">H</div>
+            <div class="grid_item_repeat_2">I</div>
+            <div class="grid_item_repeat_2">J</div>
+        </div>
+        <p>En este segund grip la firma de la funcion es la siguiente:
+            grid-template-columns 100px repeat(5,50px) 100px;
+            esto significa que tenemos primero una columna de 100 pixeles
+            luego repetimos otras 5 columnas de 50 pixeles cada una y finalizamos
+            con la ultima columna de otros 100 pixeles. 
+        </p>
+
+        <h3>Grid 3 construido con la funcion Repeat</h3>
+        <div class="contenedor_repeat_3">
+            <div class="grid_item_repeat_3">A</div>
+            <div class="grid_item_repeat_3">B</div>
+            <div class="grid_item_repeat_3">C</div>
+            <div class="grid_item_repeat_3">D</div>
+            <div class="grid_item_repeat_3">E</div>
+            <div class="grid_item_repeat_3">F</div>
+            <div class="grid_item_repeat_3">G</div>
+            <div class="grid_item_repeat_3">H</div>
+            <div class="grid_item_repeat_3">I</div>
+            <div class="grid_item_repeat_3">J</div>
+        </div>
+        <p>En este tercer ejemplo demostramos que la funcion repeat() funciona
+            de la misma manera para las filas. la firma repeat() en este caso es:
+            grid-template-rows: 100px repeat(8, 50px) 200px;
+            tenemos una primera fila A de 100 pixeles, luego 8 filas de 50 pixeles 
+            cada una y terminamos con la fila J de 200 pixeles.
+        </p>
+
+        <h2 id="ancla_grid_3">Patrones con la funcion repeat();</h2>
+        <div class="contenedor_repeat_p">
+            <div class="grid_item_repeat_patron">A</div>
+            <div class="grid_item_repeat_patron">B</div>
+            <div class="grid_item_repeat_patron">C</div>
+            <div class="grid_item_repeat_patron">D</div>
+            <div class="grid_item_repeat_patron">E</div>
+            <div class="grid_item_repeat_patron">F</div>
+            <div class="grid_item_repeat_patron">G</div>
+            <div class="grid_item_repeat_patron">H</div>
+            <div class="grid_item_repeat_patron">I</div>
+            <div class="grid_item_repeat_patron">J</div>
+        </div>
+        <p>En este ejemplo podemos ver el significado de un patron con repeat().<br>
+            la firma de nuestra funcion es: grid-template-columns: repeat(3, 35px 100px);<br>
+            en este caso el numero 3 a la izquierda de la coma indica cuantas veces se debera 
+            repetir las medidas que indiquemos a la derecha de la coma. 
+            el patron es: la primera columna mide 35 pixeles la segunda columna 100 pixeles
+            y este patron se repite x 3.
+        </p>
+
+        <h2 id="ancla_grid_4"> Explicit Grid e Implicit Grid</h2>
+        <p>Exmplicit Grid es el grid que nostros declaramos o creamos.
+             El Implicit Grid es el grid que nostros no declaramos ni creamos.
+             Para controlar 
+        </p>
+
+        <h3>Ejemplo Explicit Grid</h3>
+        <div class="contenedor_explicit_grid">
+            <div class="grid_item_explicit">A</div>
+            <div class="grid_item_explicit">B</div>
+            <div class="grid_item_explicit">C</div>
+            <div class="grid_item_explicit">D</div>
+            <div class="grid_item_explicit">E</div>
+            <div class="grid_item_explicit">F</div>
+            <div class="grid_item_explicit">G</div>
+            <div class="grid_item_explicit">H</div>
+            <div class="grid_item_explicit">I</div>
+            <div class="grid_item_explicit">J</div>
+            <div class="grid_item_explicit">K</div>
+            <div class="grid_item_explicit">L</div>
+            <div class="grid_item_explicit">M</div>
+        </div>
+        <p>las columnas (A,B,C,D,E) son columnas explicitamente declaradas por
+            el programador.<br>
+            Las filas (A,F,K) son filas declaradas explicitamente declaradas por
+            el programador.
+        </p>
+
+        <h3>Ejemplo Implicit Grid 1</h3>
+        <div class="contenedor_implicit_grid">
+            <div class="grid_item_imp">A</div>
+            <div class="grid_item_imp">B</div>
+            <div class="grid_item_imp">C</div>
+            <div class="grid_item_imp">D</div>
+            <div class="grid_item_imp">E</div>
+            <div class="grid_item_imp">F</div>
+            <div class="grid_item_imp">G</div>
+            <div class="grid_item_imp">H</div>
+            <div class="grid_item_imp">I</div>
+            <div class="grid_item_imp">J</div>
+            <div class="grid_item_imp">K</div>
+            <div class="grid_item_imp">L</div>
+            <div class="grid_item_imp">M</div>
+        </div>
+        <p>En este caso no pareciera evidente pero la ultima fila es de tipo
+            implicit grid porque si vemos la regla de estilo con la que esta
+            declarada esta grilla:
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            podemos ver que la fila k es la tercera fila de la grilla pero el programador
+            solo indica que deben ser 2 filas de 1fr. 
+            la tercera fila es una fila Implicita y lo vamos a ver mejor en el siguiente ejemplo.
+        </p>
+
+        <h3>Ejemplo  Implicit Grid 2</h3>
+        <div class="contenedor_imp_2">
+            <div class="grid_item_imp_2">A</div>
+            <div class="grid_item_imp_2">B</div>
+            <div class="grid_item_imp_2">C</div>
+            <div class="grid_item_imp_2">D</div>
+            <div class="grid_item_imp_2">E</div>
+            <div class="grid_item_imp_2">F</div>
+            <div class="grid_item_imp_2">G</div>
+            <div class="grid_item_imp_2">H</div>
+            <div class="grid_item_imp_2">I</div>
+            <div class="grid_item_imp_2">J</div>
+            <div class="grid_item_imp_2">K</div>
+            <div class="grid_item_imp_2">L</div>
+            <div class="grid_item_imp_2">M</div>
+        </div>
+        <p>En este segundo ejemplo vemos la siguiente regla de estilo:
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 100px);
+            
+            lo unico que cambio respecto al primer ejemplo es que ahora
+            las filas en ves de tener un tamaño 1fr tienen un tamaño de 200 pixeles.
+            
+            Ahora si es muy  evidente que la tercera fila ES DE TIPO IMPLICITO.
+            nostros indicamos que las filas A Y F tuvieran tamaño de 200 pixeles
+            pero no indicamos nada acerca de la tercera fila.
+
+            NOTA: la tercera fila se ajusta al tamaño del contenido tal como 
+            la medida de tipo AUTO. 
+        </p>
+        <h2 id="ancla_grid_5">Las funciones Grid-Auto-Columns y Grid-Auto-Rows</h2>
+        <p>Para gestionar las columnas no definidas o implicitas tenemos:grid-auto-columns: ; <br>
+        para gestionar las filas no definidas o implicitas tenemos: grid-auto-rows:;<br>
+        por defecto el algoritmo define filas adicionales <br>
+        la forma por defecto es grid-auto-flow;<br>
+        podemos cambiar esta disposicion colocando, grid-auto-columns;(se indica crear columnas adicionales)<br>
+        tambien existe grid-auto-dense(establece que hacer con los huecos que se puedan formar).
+            
+        </p>
+        <p>En este caso vamos a manipular la tercera fila del ejemplo dos con grid-auto-rows </p>
+        <div class="contenedor_imp_auto">
+            <div class="grid_item_imp_auto">A</div>
+            <div class="grid_item_imp_auto">B</div>
+            <div class="grid_item_imp_auto">C</div>
+            <div class="grid_item_imp_auto">D</div>
+            <div class="grid_item_imp_auto">E</div>
+            <div class="grid_item_imp_auto">F</div>
+            <div class="grid_item_imp_auto">G</div>
+            <div class="grid_item_imp_auto">H</div>
+            <div class="grid_item_imp_auto">I</div>
+            <div class="grid_item_imp_auto">J</div>
+            <div class="grid_item_imp_auto">K</div>
+            <div class="grid_item_imp_auto">L</div>
+            <div class="grid_item_imp_auto">M</div>
+        </div>
+        <p>vemos que el estilo es grid-template-columns:repeat(5,1fr);<br>
+            grid-template-rows:repeat(2,200px);<br>
+            grid-auto-rows: 200px;<br>
+        lo unico que cambio es la tercera linea donde indicamos que la fila K tan bien asuma 200 pixeles
+        </p>
+        <h2>Limites para los Grid items y como contruir una grilla dinamica</h2>
+
+        <h3>Propiedad minmax</h3>
+        <p>La funcion recibe dos parametros para establecer los valores minimos y maximo que reciben los items.</p>
+
+        <div class="contenedor_minmax">
+            <div class="grid_item_minmax">A</div>
+            <div class="grid_item_minmax">B</div>
+            <div class="grid_item_minmax">C</div>
+            <div class="grid_item_minmax">D</div>
+            <div class="grid_item_minmax">E</div>
+            <div class="grid_item_minmax">F</div>
+        </div>    
+        <p>Esto viene muy bien para cosas que tienen que tener un tamaño minimo hasta cierto punto sin llegar a aplastarse<br>
+        podemos ver como el grid se puede expandir conforme agrandamos la pantalla hasta los 500 pixeles y como se achica<br>
+    hasta reducirse a los 300 pixeles si achicamos la pagina pero por debajo de los 300 pixeles ya no se reduce mas.</p>
+
+
+
+
+    </body>
+    <footer>
+    </footer>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+        <title>Practica Front-End</title>
+        <link rel="stylesheet" href="styles2.css">
+    </head>
+    <header>
+        <div class="sombreado">
+            <div class="titulo">
+                <h1>Cheat Sheet Css</h1>
+                <p>De Guillermo Gonzalo Abuin para HackSpace</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Bases de Css</a>
+                <ul class="submenu">
+                    <li><a href="./index.html#ancla_1">Selectores Css</a></li>
+                    <li><a href="./index.html#ancla_2">Box Model</a></li>
+                </ul> 
+            </li>    
+            <li><a href="Flexbox.html">Flexbox</a>
+                <ul class="submenu">
+                    <li><a href="Flexbox.html#ancla_flexbox1">Control de ejes</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_2">Justify-content</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_3">Align-Items</a></li>
+                    <li><a href="Flexbox.html#ancla_fbx_4">Align-Content</a></li>
+                </ul>
+            </li>     
+            <li><a href="PracticaFlexbox.html">Practica Flexbox</a></li>     
+            <li><a href="Grid.html">Grid Layout</a>
+                <ul class="submenu">
+                    <li><a href="Grid.html#ancla_grid_1">Fr y Auto</a></li>
+                    <li><a href="Grid.html#ancla_grid_2">Funcion repeat();</a></li>
+                    <li><a href="Grid.html#ancla_grid_3">Patrones repeat();</a></li>
+                    <li><a href="Grid.html#ancla_grid_4">Implicit y Explicit Grid</a></li>
+                    <li><a href="Grid.html#ancla_grid_5">Funciones grid-auto columns y grid-auto-rows</a></li>
+                </ul>
+            </li>     
+        </ul>
+    </nav>
+    <body>
+        <main>
+            <h1 id="ancla_flexbox">Flexbox</h1>
+
+            <ul>
+                <li>Es un modelo de layout que permite que las cajas sean flexibles, es un valor de la propiedad display.</li>
+                <li>Existen display:flex; y display:inline-flex para que el contenedor de disponga en forma de bloque o de tipo  en linea.</li>
+                <li>Se necesita un contenedor (flex-container) y almenos un hijo (flex-item)</li>
+                <li>Las cajas flexibles son items,el contenedor es el elemento contenedor al que pertenecen los flex-items</li>
+                <li>Existen dos ejes para colocar y alinear elementos. </li>
+                <li>Por defecto el eje principal es horizontal(de izqueirda a derecha) y el eje secundario es vertical(de arriba a abajo)</li>
+                <li>Se pueden intercambiar los ejes y la direccion de ambos</li>
+                <li>eje horizontal: main start/main end</li>
+                <li>eje vertical: cross start/cross end</li>
+            </ul>
+            
+            <div class="container_example">
+                <h2 class="titulo">Container</h2>
+                <div class="flex_item">Flex-item</div>
+                <div class="flex_item">Flex-item</div>
+                <div class="flex_item">Flex-item</div>
+            </div>
+            <h1>Modificando el main axis / eje horizontal</h1>
+            <h2>flex-direction:row;</h2>
+            <div class="container_ejemp">    
+                <div class="flex_item_ejemp">Flex-item 1</div>
+                <div class="flex_item_ejemp">Flex-item 2</div>
+                <div class="flex_item_ejemp">Flex-item 3</div>
+            </div>
+            <p>flex-direction:row; es la posicion en el axis por defecto por tanto no hay ninguna modificacion respecto a su posicion por default</p>
+
+            <h2>flex-direction:row-reverse;</h2>
+            <div class="container_ejemp2">    
+                <div class="flex_item_ejemp2">Flex-item 1</div>
+                <div class="flex_item_ejemp2">Flex-item 2</div>
+                <div class="flex_item_ejemp2">Flex-item 3</div>
+            </div>
+            <h1 id="ancla_flexbox1">Modificando el cross axis / eje vertical</h1>
+            <h2>flex-direction:column;</h2>
+            <div class="container_ejemp3">    
+                <div class="flex_item_ejemp3">Flex-item 1</div>
+                <div class="flex_item_ejemp3">Flex-item 2</div>
+                <div class="flex_item_ejemp3">Flex-item 3</div>
+            </div>
+            <h2>flex-direction:column-reverse;</h2>
+            <div class="container_ejemp4">    
+                <div class="flex_item_ejemp4">Flex-item 1</div>
+                <div class="flex_item_ejemp4">Flex-item 2</div>
+                <div class="flex_item_ejemp4">Flex-item 3</div>
+            </div>
+
+            <h2>Control de colapsado</h2>
+
+            <div class="container_ejemp5">    
+                <div class="flex_item_ejemp5">Flex-item 1</div>
+                <div class="flex_item_ejemp5">Flex-item 2</div>
+                <div class="flex_item_ejemp5">Flex-item 3</div>
+                <div class="flex_item_ejemp5">Flex-item 4</div>
+                <div class="flex_item_ejemp5">Flex-item 5</div>
+                <div class="flex_item_ejemp5">Flex-item 6</div>
+                <div class="flex_item_ejemp5">Flex-item 7</div>
+                <div class="flex_item_ejemp5">Flex-item 8</div>
+            </div>
+
+            
+
+            <h2 id="ancla_fbx_2">Justify-Content</h2>
+            <article>
+                <p>
+                    Para alinear contenido en el main axis tenemos  justify-content el cual tiene
+                    las siguientes propiedades:<br>
+                      flex-start, center,flex-end, space-between,space-around,space-evently.
+                </p>
+            </article>
+            <h3>:flex-start;</h3>
+            <div class="container-jc">
+                <div class="ft">1</div>
+                <div class="ft">2</div>
+                <div class="ft">3</div>
+                <div class="ft">4</div>
+                <div class="ft">5</div>
+                <div class="ft">6</div>
+                <div class="ft">7</div>
+                <div class="ft">8</div>
+                <div class="ft">9</div>
+                <div class="ft">10</div>
+            </div>
+            <P>coloca los elementos pegados al margen izquierdo(es la posicion por defecto)</P>
+            <h3>:center;</h3>
+            <div class="container-jc-center">
+                <div class="fbc">1</div>
+                <div class="fbc">2</div>
+                <div class="fbc">3</div>
+                <div class="fbc">4</div>
+                <div class="fbc">5</div>
+                <div class="fbc">6</div>
+                <div class="fbc">7</div>
+                <div class="fbc">8</div>
+                <div class="fbc">9</div>
+                <div class="fbc">10</div>
+            </div>
+            <p>centra los elementos</p>
+
+            <h3>:flex-end;</h3>
+            <div class="container-jc-end">
+                <div class="fbe">1</div>
+                <div class="fbe">2</div>
+                <div class="fbe">3</div>
+                <div class="fbe">4</div>
+                <div class="fbe">5</div>
+                <div class="fbe">6</div>
+                <div class="fbe">7</div>
+                <div class="fbe">8</div>
+                <div class="fbe">9</div>
+                <div class="fbe">10</div>
+            </div>
+            <p>coloca los elementos pegados al margen derecho</p>
+
+            <h3>:space-between;</h3>
+            <div class="container-jc-sb">
+                <div class="fbsb">1</div>
+                <div class="fbsb">2</div>
+                <div class="fbsb">3</div>
+                <div class="fbsb">4</div>
+                <div class="fbsb">5</div>
+                <div class="fbsb">6</div>
+                <div class="fbsb">7</div>
+                <div class="fbsb">8</div>
+                <div class="fbsb">9</div>
+                <div class="fbsb">10</div>
+            </div>
+            <p>
+                separa los elementos a la misma distancia
+            </p>
+
+            <h3>:space-around;</h3>
+            <div class="container-jc-sa">
+                <div class="fbsa">1</div>
+                <div class="fbsa">2</div>
+                <div class="fbsa">3</div>
+                <div class="fbsa">4</div>
+                <div class="fbsa">5</div>
+                <div class="fbsa">6</div>
+                <div class="fbsa">7</div>
+                <div class="fbsa">8</div>
+                <div class="fbsa">9</div>
+                <div class="fbsa">10</div>
+            </div>
+            <p>deja un pequeño margen a la izquierda y derecha pero no el mismo espacio  entre medio
+                de cada elemento
+            </p>
+
+            <h3>:Space-Evenly;</h3>
+            <div class="container-jc-se">
+                <div class="fbse">1</div>
+                <div class="fbse">2</div>
+                <div class="fbse">3</div>
+                <div class="fbse">4</div>
+                <div class="fbse">5</div>
+                <div class="fbse">6</div>
+                <div class="fbse">7</div>
+                <div class="fbse">8</div>
+                <div class="fbse">9</div>
+                <div class="fbse">10</div>
+            </div>
+            <p>deja un pequeño espacio entre los bordes izquierdo y derecho y ademas
+                deja el mismo espacio entre medio de cada elemento
+            </p>
+
+            <h2 id="ancla_fbx_3">Align-Items</h2>
+            <article>
+                <p>
+                    para Cross axis tenemos dos tipos de propiedades:
+                    align-items cuando tenemos una sola linea de elementos
+                    y align-content cuando tenemos varias lineas.
+                </p>
+            </article>
+
+            <h3>Align-Items: stretch;</h3>
+            <div class="container-ai-s">
+                <div class="fbais">1</div>
+                <div class="fbais">2</div>
+                <div class="fbais">3</div>
+                <div class="fbais">4</div>
+                <div class="fbais">5</div>
+                <div class="fbais">6</div>
+                <div class="fbais">7</div>
+                <div class="fbais">8</div>
+                <div class="fbais">9</div>
+                <div class="fbais">10</div>
+            </div>
+            <h3>align-items: center;</h3>
+            <div class="container-ai-c">
+                <div class="fbaic">1</div>
+                <div class="fbaic">2</div>
+                <div class="fbaic">3</div>
+                <div class="fbaic">4</div>
+                <div class="fbaic">5</div>
+                <div class="fbaic">6</div>
+                <div class="fbaic">7</div>
+                <div class="fbaic">8</div>
+                <div class="fbaic">9</div>
+                <div class="fbaic">10</div>
+            </div>
+            <h3>align-items: flex-end;</h3>
+            <div class="container-ai-fe">
+                <div class="fbaife">1</div>
+                <div class="fbaife">2</div>
+                <div class="fbaife">3</div>
+                <div class="fbaife">4</div>
+                <div class="fbaife">5</div>
+                <div class="fbaife">6</div>
+                <div class="fbaife">7</div>
+                <div class="fbaife">8</div>
+                <div class="fbaife">9</div>
+                <div class="fbaife">10</div>
+            </div>
+            <h3>align-items: flex-end;</h3>
+            <div class="container-ai-fe">
+                <div class="fbaife">1</div>
+                <div class="fbaife">2</div>
+                <div class="fbaife">3</div>
+                <div class="fbaife">4</div>
+                <div class="fbaife">5</div>
+                <div class="fbaife">6</div>
+                <div class="fbaife">7</div>
+                <div class="fbaife">8</div>
+                <div class="fbaife">9</div>
+                <div class="fbaife">10</div>
+            </div>
+            <h3>align-items: baseline;</h3>
+            <div class="container-ai-fe">
+                <div class="fbaife">1</div>
+                <div class="fbaife">2</div>
+                <div class="fbaife">3</div>
+                <div class="fbaife">4</div>
+                <div class="fbaife">5</div>
+                <div class="fbaife">6</div>
+                <div class="fbaife">7</div>
+                <div class="fbaife">8</div>
+                <div class="fbaife">9</div>
+                <div class="fbaife">10</div>
+            </div>
+
+            <h2 id="ancla_fbx_4">Align-Content</h2>
+            <p>cumple las mismas funciones que align-items pero en este caso es para mas de un 
+                elemento
+            </p>
+            <h3>align-content: flex-start;</h3>
+            <div class="container-ac-fs">
+                <div class="fbacfs">1</div>
+                <div class="fbacfs">2</div>
+                <div class="fbacfs">3</div>
+                <div class="fbacfs">4</div>
+                <div class="fbacfs">5</div>
+                <div class="fbacfs">6</div>
+                <div class="fbacfs">7</div>
+                <div class="fbacfs">8</div>
+                <div class="fbacfs">9</div>
+                <div class="fbacfs">10</div>
+            </div>
+            <h3>align-content: center;</h3>
+            <div class="container-ac-c">
+                <div class="fbacc">1</div>
+                <div class="fbacc">2</div>
+                <div class="fbacc">3</div>
+                <div class="fbacc">4</div>
+                <div class="fbacc">5</div>
+                <div class="fbacc">6</div>
+                <div class="fbacc">7</div>
+                <div class="fbacc">8</div>
+                <div class="fbacc">9</div>
+                <div class="fbacc">10</div>
+            </div>
+            <h3>align-content: flex-end;</h3>
+            <div class="container-ac-fe">
+                <div class="fbacfe">1</div>
+                <div class="fbacfe">2</div>
+                <div class="fbacfe">3</div>
+                <div class="fbacfe">4</div>
+                <div class="fbacfe">5</div>
+                <div class="fbacfe">6</div>
+                <div class="fbacfe">7</div>
+                <div class="fbacfe">8</div>
+                <div class="fbacfe">9</div>
+                <div class="fbacfe">10</div>
+            </div>
+            <h3>align-content: flex-end;</h3>
+            <div class="container-ac-fe">
+                <div class="fbacfe">1</div>
+                <div class="fbacfe">2</div>
+                <div class="fbacfe">3</div>
+                <div class="fbacfe">4</div>
+                <div class="fbacfe">5</div>
+                <div class="fbacfe">6</div>
+                <div class="fbacfe">7</div>
+                <div class="fbacfe">8</div>
+                <div class="fbacfe">9</div>
+                <div class="fbacfe">10</div>
+            </div>
+            <h3>align-content: space-around;</h3>
+            <div class="container-ac-sa">
+                <div class="fbacsa">1</div>
+                <div class="fbacsa">2</div>
+                <div class="fbacsa">3</div>
+                <div class="fbacsa">4</div>
+                <div class="fbacsa">5</div>
+                <div class="fbacsa">6</div>
+                <div class="fbacsa">7</div>
+                <div class="fbacsa">8</div>
+                <div class="fbacsa">9</div>
+                <div class="fbacsa">10</div>
+            </div>
+            <h3>align-content: space-between;</h3>
+            <div class="container-ac-sbtw">
+                <div class="fbacsbtw">1</div>
+                <div class="fbacsbtw">2</div>
+                <div class="fbacsbtw">3</div>
+                <div class="fbacsbtw">4</div>
+                <div class="fbacsbtw">5</div>
+                <div class="fbacsbtw">6</div>
+                <div class="fbacsbtw">7</div>
+                <div class="fbacsbtw">8</div>
+                <div class="fbacsbtw">9</div>
+                <div class="fbacsbtw">10</div>
+            </div>
+            <h3>align-content: space-evenly;</h3>
+            <div class="container-ac-se">
+                <div class="fbacse">1</div>
+                <div class="fbacse">2</div>
+                <div class="fbacse">3</div>
+                <div class="fbacse">4</div>
+                <div class="fbacse">5</div>
+                <div class="fbacse">6</div>
+                <div class="fbacse">7</div>
+                <div class="fbacse">8</div>
+                <div class="fbacse">9</div>
+                <div class="fbacse">10</div>
+            </div>
+
+
+        </main>
+
+    </body>
+    <footer>
+
+    </footer>
+</html>
